@@ -26,10 +26,10 @@ public class AllElevators implements CheckFree, Call {
         // то есть свободных лифтов нет
     }
 
-    public boolean thisNameFound(String name){
+    public boolean thisNameFound(String name) {
         Node temp = elevators.root;
-        for(int i = 0; i<elevators.count;i+=1){
-            if(temp.elevator.name.equals(name)){
+        for (int i = 0; i < elevators.count; i += 1) {
+            if (temp.elevator.name.equals(name)) {
                 return true;
             }
         }
@@ -44,7 +44,6 @@ public class AllElevators implements CheckFree, Call {
         System.out.println("Лифт к вам уже едет");
         now.changeCondition();
     }
-
 
 
     public void call(Feature feature) {

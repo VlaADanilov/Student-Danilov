@@ -5,7 +5,7 @@ public class Node {
 
     public Elevator elevator;
 
-    Node(Elevator elevator){
-        this.elevator=elevator;
+    Node(Elevator elevator) {
+        this.elevator = elevator;
     }
 }

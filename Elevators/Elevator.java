@@ -5,13 +5,13 @@ public abstract class Elevator {
     Feature feature;
     String name;
 
-    public void changeCondition(){
-        if(condition==Condition.Free) condition = Condition.Busy;
+    public void changeCondition() {
+        if (condition == Condition.Free) condition = Condition.Busy;
         else condition = Condition.Free;
     }
 
-    public void isFreeNow(){
-        condition=Condition.Free;
+    public void isFreeNow() {
+        condition = Condition.Free;
     }
 
     public String toString() {

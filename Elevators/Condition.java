@@ -5,8 +5,8 @@ public enum Condition {
 
     private String status;
 
-    Condition(String status){
-        this.status=status;
+    Condition(String status) {
+        this.status = status;
     }
 
     @Override

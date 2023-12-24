@@ -2,7 +2,7 @@ package Elevators;
 
 public class PersonalElevator extends Elevator {
 
-    PersonalElevator(AllElevators list, String name) throws NameIsOccupiedException {
+    public PersonalElevator(AllElevators list, String name) throws NameIsOccupiedException {
         if (list.thisNameFound(name)) throw new NameIsOccupiedException();
         this.name = name;
         condition = Condition.Free;

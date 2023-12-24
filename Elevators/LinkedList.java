@@ -1,14 +1,22 @@
 package Elevators;
 
 public class LinkedList {
-    public Node root;
-    public int count = 0;
+    private Node root;
+    private int count = 0;
 
-    LinkedList() {
+    public Node getRoot() {
+        return root;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public LinkedList() {
 
     }
 
-    LinkedList(Elevator elevator) {
+    public LinkedList(Elevator elevator) {
         root = new Node(elevator);
         count += 1;
     }

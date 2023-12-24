@@ -1,9 +1,21 @@
 package Elevators;
 
 public abstract class Elevator {
-    Condition condition;
-    Feature feature;
-    String name;
+    protected Condition condition;
+    protected Feature feature;
+    protected String name;
+
+    public Condition getCondition() {
+        return condition;
+    }
+
+    public Feature getFeature() {
+        return feature;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public void changeCondition() {
         if (condition == Condition.Free) condition = Condition.Busy;

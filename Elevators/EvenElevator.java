@@ -2,7 +2,7 @@ package Elevators;
 
 public class EvenElevator extends Elevator {
 
-    EvenElevator(AllElevators list, String name) throws NameIsOccupiedException {
+    public EvenElevator(AllElevators list, String name) throws NameIsOccupiedException {
         if (list.thisNameFound(name)) throw new NameIsOccupiedException();
         this.name = name;
         feature = Feature.Even;

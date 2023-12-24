@@ -3,9 +3,13 @@ package Elevators;
 public class Node {
     public Node next;
 
-    public Elevator elevator;
+    private Elevator elevator;
 
-    Node(Elevator elevator) {
+    public Elevator getElevator() {
+        return elevator;
+    }
+
+    public Node(Elevator elevator) {
         this.elevator = elevator;
     }
 }

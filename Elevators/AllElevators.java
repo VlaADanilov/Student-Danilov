@@ -13,10 +13,10 @@ public class AllElevators implements CheckFree, Call {
     }
 
     public Elevator elevatorFree(Feature feature) {
-        Node temp = elevators.root;
-        for (int a = 0; a < elevators.count; a += 1) {
-            if (temp.elevator.condition == Condition.Free && temp.elevator.feature == feature) {
-                return temp.elevator;
+        Node temp = elevators.getRoot();
+        for (int a = 0; a < elevators.getCount(); a += 1) {
+            if (temp.getElevator().getCondition() == Condition.Free && temp.getElevator().getFeature() == feature) {
+                return temp.getElevator();
             }
             temp = temp.next;
         }
@@ -27,9 +27,9 @@ public class AllElevators implements CheckFree, Call {
     }
 
     public boolean thisNameFound(String name) {
-        Node temp = elevators.root;
-        for (int i = 0; i < elevators.count; i += 1) {
-            if (temp.elevator.name.equals(name)) {
+        Node temp = elevators.getRoot();
+        for (int i = 0; i < elevators.getCount(); i += 1) {
+            if (temp.getElevator().getName().equals(name)) {
                 return true;
             }
         }

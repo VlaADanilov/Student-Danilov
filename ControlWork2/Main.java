@@ -1,15 +1,12 @@
 package ControlWork2;
 
-import com.sun.jdi.Value;
-
-import javax.xml.crypto.dsig.keyinfo.KeyValue;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.time.LocalDate;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+
+
         // Задание 1
         Scanner s = new Scanner(new File("schedule.txt"));
         List<String> list = new ArrayList<>();
@@ -17,6 +14,10 @@ public class Main {
             list.add(s.nextLine());
         }
         s.close();
+
+        System.out.println();
+        System.out.println();
+        System.out.println("Task4");
 
         // Задание 4
         Map<String, List<Programm>> map = new HashMap<>();
@@ -33,34 +34,60 @@ public class Main {
             }
             map.put(nowChannel, miniList);
         }
-        //map.forEach((key, value) -> System.out.println(key + "\n" + Arrays.toString(value.toArray())));
+        map.forEach((key, value) -> System.out.println(key + "\n" + Arrays.toString(value.toArray())));
+
+        System.out.println();
+        System.out.println();
+        System.out.println("Task5");
 
         // Задание 5
         List<Programm> allProgramsList = new ArrayList<>();
         for (List<Programm> ls : map.values()){
             allProgramsList.addAll(ls);
         }
+        System.out.println(Arrays.toString(allProgramsList.toArray()));
 
-        // Задание 6
+        System.out.println();
+        System.out.println();
+        System.out.println("Task6");
+
+        // Задание 6 (Лист со всеми программами сортируем по времени)
         Collections.sort(allProgramsList, new Comparator<Programm>() {
             @Override
             public int compare(Programm o1, Programm o2) {
                 return o1.getTime().compareTo(o2.getTime());
             }
         });
-//        for (Programm pr : allProgramsList){
-//            System.out.println(pr);
-//        }
+        System.out.println(Arrays.toString(allProgramsList.toArray()));
+
+        System.out.println();
+        System.out.println();
+        System.out.println("Task7");
 
         // Задание 7
-        programsInTime(map, new BroadcastsTime("12:00"));
+        programsInTime(map, new BroadcastsTime("15:33"));
+
+
+        System.out.println();
+        System.out.println();
+        System.out.println("Task8");
 
         // Задание 8
         List<Programm> inStr = findByStr("тат", allProgramsList);
         System.out.println(Arrays.toString(inStr.toArray()));
 
+        System.out.println();
+        System.out.println();
+        System.out.println("Task9");
+
+
         // Задание 9
-        programsInTime(map, new BroadcastsTime("01:30"), "#ТНВ");
+        programsInTime(map, new BroadcastsTime("15:36"), "#Россия 1");
+
+        System.out.println();
+        System.out.println();
+        System.out.println("Task10");
+
 
         // Задание 10
         List<Programm> list1 = findByTime(allProgramsList, new BroadcastsTime("10:00"), new BroadcastsTime("20:00"), "#НТВ");

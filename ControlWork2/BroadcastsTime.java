@@ -36,16 +36,16 @@ public class BroadcastsTime implements Comparable<BroadcastsTime>{
     }
     boolean between(BroadcastsTime t1, BroadcastsTime t2) {
         if (t1.hour() > t2.hour()){
-            if (hour() >= t1.hour() || hour() <= t2.hour()){
-                if (minutes() >= t1.minutes() && minutes() <= t2.minutes()){
-                    return true;
-                }
-            }
+            return false;
         }
         if (t1.hour() <= hour() && hour() <= t2.hour()){
-            if (t1.minutes() <= minutes() && minutes() <= t2.minutes()){
-                return true;
+            if ((t1.hour() == hour() && t1.minutes() > minutes())){
+                return false;
             }
+            if ((t2.hour() == hour()) && minutes() >= t2.minutes()){
+                return false;
+            }
+            return true;
         }
         return false;
     }
